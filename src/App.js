@@ -31,17 +31,18 @@ function App() {
       
       <Button onClick={() => handleSubmitBtnClick(todoInputValue)} variant="primary" className='mt-2'>Submit</Button>
 
+      {todoList.length !== 0 &&
       <div className='w-100 mt-2 py-2 bg-white border d-flex flex-column gap-3'>
-        {todoList.map(todo => {
-          return <TodoCard 
-          key={todo.id} 
-          isDone={todo.isDone} 
-          todoText={todo.todoText} 
-          id={todo.id} 
-          todoList={todoList} 
-          setTodoList={setTodoList}/>
-        })}
-      </div>
+      {todoList.map(todo => {
+        return <TodoCard 
+        key={todo.id} 
+        isDone={todo.isDone} 
+        todoText={todo.todoText} 
+        id={todo.id} 
+        todoList={todoList} 
+        setTodoList={setTodoList}/>
+      })}
+    </div>}
     </main>
     </>
   );
